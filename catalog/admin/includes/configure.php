@@ -1,28 +1,21 @@
 <?php
-/*
-  $Id$
-
-  osCommerce, Open Source E-Commerce Solutions
-  http://www.oscommerce.com
-
-  Copyright (c) 2002 osCommerce
-
-  Released under the GNU General Public License
-*/
-
-// define our webserver variables
-// FS = Filesystem (physical)
-// WS = Webserver (virtual)
-  define('HTTP_SERVER', ''); // eg, http://localhost or - https://localhost should not be NULL for productive servers
-  define('HTTP_CATALOG_SERVER', '');
-  define('HTTPS_CATALOG_SERVER', '');
-  define('ENABLE_SSL_CATALOG', 'false'); // secure webserver for catalog module
-  define('DIR_FS_DOCUMENT_ROOT', $DOCUMENT_ROOT); // where your pages are located on the server. if $DOCUMENT_ROOT doesnt suit you, replace with your local path. (eg, /usr/local/apache/htdocs)
-  define('DIR_WS_ADMIN', '/admin/');
-  define('DIR_FS_ADMIN', DIR_FS_DOCUMENT_ROOT . DIR_WS_ADMIN);
+  define('HTTP_SERVER', 'http://<LB_ADDRESS>');
+  define('HTTPS_SERVER', 'http://<LB_ADDRESS>');
+  define('ENABLE_SSL', false);
+  define('HTTP_COOKIE_DOMAIN', '');
+  define('HTTPS_COOKIE_DOMAIN', '');
+  define('HTTP_COOKIE_PATH', '/catalog/admin');
+  define('HTTPS_COOKIE_PATH', '/catalog/admin');
+  define('HTTP_CATALOG_SERVER', 'http://<LB_ADDRESS>');
+  define('HTTPS_CATALOG_SERVER', 'http://<LB_ADDRESS>');
+  define('ENABLE_SSL_CATALOG', 'false');
+  define('DIR_FS_DOCUMENT_ROOT', '/var/www/html/catalog/');
+  define('DIR_WS_ADMIN', '/catalog/admin/');
+  define('DIR_WS_HTTPS_ADMIN', '/catalog/admin/');
+  define('DIR_FS_ADMIN', '/var/www/html/catalog/admin/');
   define('DIR_WS_CATALOG', '/catalog/');
   define('DIR_WS_HTTPS_CATALOG', '/catalog/');
-  define('DIR_FS_CATALOG', DIR_FS_DOCUMENT_ROOT . DIR_WS_CATALOG);
+  define('DIR_FS_CATALOG', '/var/www/html/catalog/');
   define('DIR_WS_IMAGES', 'images/');
   define('DIR_WS_ICONS', DIR_WS_IMAGES . 'icons/');
   define('DIR_WS_CATALOG_IMAGES', DIR_WS_CATALOG . 'images/');
@@ -40,11 +33,11 @@
   define('DIR_FS_DOWNLOAD', DIR_FS_CATALOG . 'download/');
   define('DIR_FS_DOWNLOAD_PUBLIC', DIR_FS_CATALOG . 'pub/');
 
-// define our database connection
-  define('DB_SERVER', '');
-  define('DB_SERVER_USERNAME', 'mysql');
-  define('DB_SERVER_PASSWORD', '');
-  define('DB_DATABASE', 'osCommerce');
+  define('DB_SERVER', '<DB_SERVER_PRIVATE_IP>');
+  define('DB_SERVER_USERNAME', '<DB_USER>');
+  define('DB_SERVER_PASSWORD', '<DB_PASSWORD>');
+  define('DB_DATABASE', '<DB_NAME>');
   define('USE_PCONNECT', 'false');
-  define('STORE_SESSIONS', '');
+  define('STORE_SESSIONS', 'mysql');
+  define('CFG_TIME_ZONE', 'Asia/Hong_Kong');
 ?>
